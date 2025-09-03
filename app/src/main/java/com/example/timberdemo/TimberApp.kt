@@ -1,22 +1,11 @@
 package com.example.timberdemo
 
 import android.app.Application
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.FormatStrategy
-import com.orhanobut.logger.Logger
-import com.orhanobut.logger.PrettyFormatStrategy
 import timber.log.Timber
 
 class TimberApp : Application() {
     override fun onCreate() {
         super.onCreate()
-
-        val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
-            .showThreadInfo(true)
-            .methodCount(1)
-            .methodOffset(5)
-            .build()
-        Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
 
         Timber.plant(object: Timber.DebugTree(){
 
